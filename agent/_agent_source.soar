@@ -139,3 +139,6 @@ pushd execute-task
 source execute-task_source.soar
 popd
 
+pushd cozmo-tasks/acs19-experiment
+source acs19-experiment_source.soar
+popd

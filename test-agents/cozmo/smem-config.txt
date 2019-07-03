@@ -62,6 +62,19 @@ template name _HANDLE_ _WORDTYPE_ _WORD_* {
     top N
     state1 N
     soar1 ADJ soar
+
+	northeast1 ADJ northeast1
+	northwest1 ADJ northwest1
+	southeast1 ADJ southeast1
+	southwest1 ADJ southwest1
+
+	northeast2 ADJ northeast2
+	northwest2 ADJ northwest2
+	southeast2 ADJ southeast2
+	southwest2 ADJ southwest2
+
+	northern1 ADJ northern1
+	southern1 ADJ southern1
 }
 
 template proper-name _HANDLE_ _WORD_* {
@@ -116,6 +129,7 @@ template category _HANDLE_ _WORD_* {
     object object
     block block
     person person
+	location location
     message message
     answer answer
     question question
@@ -131,6 +145,7 @@ template subcategory _HANDLE_ _WORD_* {
 }
 
 template spatial-shape _HANDLE_ _WORD_* {
+	corner1 corner
     room1 room office
     end1 end
     wall1 wall

@@ -1,40 +1,36 @@
 # H-layout objects
 smem --add {
-	# Kitchen
-	(<kit> ^handle loc-kitchen1 ^object-instance true ^item-type object ^waypoint wp02
-		^category location ^name kitchen1 ^spatial-shape room1)
-		
-	# Soar Office
-	(<soar> ^handle loc-soar1 ^object-instance true ^item-type object ^waypoint wp01
-		^category location ^name soar1 ^spatial-shape room1)
-		
-#	# Main Office
-#	(<main> ^handle loc-main1 ^object-instance true ^item-type object ^waypoint wp02
-#		^category location ^name main1 ^spatial-shape room1)
-#		
-#	# Conference Room
-#	(<conf> ^handle loc-conf1 ^object-instance true ^item-type object ^waypoint wp04
-#		^category location ^name conference1 ^spatial-shape room1 )
-#		
-	# North Hallway
-	(<north> ^handle loc-north-hall1 ^object-instance true ^item-type object ^waypoint wp03
-		^category location ^cardinal-direction1 north1 ^spatial-shape hall1)
-#		
-#	# South Hallway
-#	(<south> ^handle loc-south-hall1 ^object-instance true ^item-type object ^waypoint wp05
-#		^category location ^cardinal-direction1 south1 ^spatial-shape hall1)
-#
-#	# Alice
-#	(<alice> ^handle person-alice1 ^object-instance true ^item-type object
-#		^category person ^name alice1 ^room1 <kit>)
-#		
-#	# Bob
-#	(<bob> ^handle person-bob1 ^object-instance true ^item-type object
-#		^category person ^name bob1 ^room1 <soar>)
-#		
-#	# Charlie
-#	(<charlie> ^handle person-charlie1 ^object-instance true ^item-type object
-#		^category person ^name charlie1 ^room1 <conf>)
+	# Northern room
+	(<north> ^handle loc-north1 ^object-instance true ^item-type object ^waypoint wp01 
+		^category location ^name northern1 ^spatial-shape room1 ^child-location <northwest1> <northeast1> <southeast1> <southwest1>)
+
+	# Southern room
+	(<south> ^handle loc-south1 ^object-instance true ^item-type object ^waypoint wp02
+        ^category location ^name southern2 ^spatial-shape room2 ^child-location <northwest2> <northeast2> <southeast2> <southwest2>)
+
+	# Hallway
+	(<hall> ^handle loc-hall1 ^object-instance true ^item-type object ^waypoint wp03
+		^category location ^spatial-shape hall1)
+
+	# Northern Room Corners
+	(<northwest1> ^handle loc-northwest1 ^object-instance true ^item-type object ^parent-location <north> ^x -2.032 ^y 3.048 
+		^category location ^name northwest1 ^spatial-shape corner1)
+	(<northeast1> ^handle loc-northeast1 ^object-instance true ^item-type object ^parent-location <north> ^x 2.032 ^y 3.048 
+		^category location ^name northeast1 ^spatial-shape corner1)
+	(<southeast1> ^handle loc-southeast1 ^object-instance true ^item-type object ^parent-location <north> ^x 2.032 ^y -3.048 
+		^category location ^name southeast1 ^spatial-shape corner1)
+	(<southwest1> ^handle loc-southwest1 ^object-instance true ^item-type object ^parent-location <north> ^x -2.032 ^y -3.048 
+		^category location ^name southwest1 ^spatial-shape corner1)
+
+	(<northwest2> ^handle loc-northwest2 ^object-instance true ^item-type object ^parent-location <south> ^x -2.032 ^y -6.096 
+		^category location ^name northwest2 ^spatial-shape corner1)
+	(<northeast2> ^handle loc-northeast2 ^object-instance true ^item-type object ^parent-location <south> ^x 2.032 ^y -6.096 
+		^category location ^name northeast2 ^spatial-shape corner1)
+	(<southeast2> ^handle loc-southeast2 ^object-instance true ^item-type object ^parent-location <south> ^x 2.032 ^y -12.192 
+		^category location ^name southeast2 ^spatial-shape corner1)
+	(<southwest2> ^handle loc-southwest2 ^object-instance true ^item-type object ^parent-location <south> ^x -2.032 ^y -12.192 
+		^category location ^name southwest2 ^spatial-shape corner1)
+
 }
 
 ## RELATIONS USED IN MOBILE DOMAIN FOR EVALUATION

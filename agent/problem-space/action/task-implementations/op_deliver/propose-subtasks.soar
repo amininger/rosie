@@ -1,0 +1,97 @@
+
+sp {op_deliver1*external*propose*op_find1
+   (state <s> ^name op_deliver1
+              ^problem-space.execution-type external
+              ^target-object <obj>)
+   (<obj> ^predicates.is-visible1 not-visible1)
+-->
+   (<s> ^operator <o> + =)
+   (<o> ^name op_find1
+        ^item-type task-operator
+        ^task-handle find1
+        ^arg1 <arg1>)
+   (<arg1> ^arg-type object
+           ^id <obj>)
+}
+
+sp {op_deliver1*external*propose*op_pick-up1
+   (state <s> ^name op_deliver1
+              ^problem-space.execution-type external
+             -^current-task-segment.completed-pickup
+              ^target-object <obj>)
+   (<obj> ^predicates.is-visible1 visible1)
+-->
+   (<s> ^operator <o> + =)
+   (<o> ^name op_pick-up1
+        ^item-type task-operator
+        ^task-handle pick-up1
+        ^arg1 <arg1>)
+   (<arg1> ^arg-type object
+           ^id <obj>)
+}
+
+sp {op_deliver1*external*propose*op_go-to-location
+   (state <s> ^name op_deliver1
+              ^problem-space.execution-type external
+              ^destination-location <loch>
+              ^world.robot.current-location.handle <> <loch>
+              ^target-object.predicates.arm-status grabbed)
+-->
+   (<s> ^operator <o> + =)
+   (<o> ^name op_go-to-location1
+        ^item-type task-operator
+        ^task-handle go-to-location1
+        ^arg2 <arg2>)
+   (<arg2> ^arg-type partial-predicate
+           ^handle to1
+           ^2 <loc>)
+   (<loc> ^handle <loch>
+          ^item-type object
+          ^predicates <preds>)
+   (<preds> ^category location)
+}
+
+#sp {op_deliver1*external*propose*op_approach1
+#   (state <s> ^name op_deliver1
+#              ^problem-space.execution-type external
+#              ^destination-location <loch>
+#              ^world.robot.current-location.handle <loch>
+#              ^target-object.predicates.arm-status grabbed
+#             -^current-task-segment.completed-approach)
+#-->
+#   (<s> ^operator <o> + =)
+#   (<o> ^name op_pick-up1
+#        ^item-type task-operator
+#        ^task-handle pick-up1
+#        ^arg1 <arg1>)
+#   (<arg1> ^arg-type object
+#           ^id <obj>)
+#}
+#
+#sp {op_go-to-location1*external*propose*op_go-to-waypoint1
+#   (state <s> ^name op_go-to-location1
+#              ^problem-space.execution-type external
+#              ^desired-waypoint <wp>)
+#-->
+#   (<s> ^operator <o> + =)
+#   (<o> ^name op_go-to-waypoint1
+#        ^item-type task-operator
+#        ^task-handle go-to-waypoint1
+#        ^arg1 <arg1>)
+#   (<arg1> ^arg-type waypoint
+#           ^id <wp>)
+#}
+#
+#sp {op_deliver1*external*propose*op_go-to-waypoint1
+#   (state <s> ^name op_deliver1
+#              ^problem-space.execution-type external
+#              ^desired-waypoint <wp>)
+#-->
+#   (<s> ^operator <o> + =)
+#   (<o> ^name op_go-to-waypoint1
+#        ^item-type task-operator
+#        ^task-handle go-to-waypoint1
+#        ^arg1 <arg1>)
+#   (<arg1> ^arg-type waypoint
+#           ^id <wp>)
+#}

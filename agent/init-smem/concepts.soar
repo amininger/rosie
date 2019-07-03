@@ -91,7 +91,7 @@ smem --add {
    (@enemy ^handle enemy ^property @property)
    (@linear ^handle linear ^property @property)
    (@center ^handle center ^property @property)
-   (@corner ^handle corner ^property @property)
+   #(@corner ^handle corner ^property @property)
    (@edge ^handle edge ^property @property)
    (@covered ^handle covered ^property @property)
    (@moved ^handle moved ^property @property)

@@ -4,7 +4,7 @@
 sp {subproblem*execute*propose*handle-execution-failure
    (state <s> ^problem-space.subproblem execute
               ^current-task-segment.<cmd-name> <cmd>)
-   (<cmd> ^status << failure interrupted failed >>)
+   (<cmd> ^status << failure failed >>)
 -->
    (<s> ^operator <o> + = >)
    (<o> ^name handle-execution-failure

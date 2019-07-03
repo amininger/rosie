@@ -1,0 +1,31 @@
+
+#### GOAL SATISFACTION ####
+
+# No until-clause, wait until the turn-command is successful
+sp {op_scan1*elaborate*desired*satisfied*no*until-clause
+   (state <s> ^name op_scan1
+              ^problem-space.execution-type external
+              ^current-task-segment.turn-command.status << success succeeded >>
+             -^task-operator.until-clause)
+-->
+   (<s> ^desired.satisfied true)
+}
+
+sp {op_scan1*reject*complete-task*still*executing
+   (state <s> ^name op_scan1
+              ^current-task-segment.turn-command.status executing
+              ^operator <o> +)
+   (<o> ^name complete-task)
+-->
+   (<s> ^operator <o> -)
+}
+
+sp {op_scan1*reject*complete-task*not*stopped
+   (state <s> ^name op_scan1
+              ^current-task-segment.stop-command <stop>
+              ^operator <o> +)
+   (<o> ^name complete-task)
+   (<stop> -^status << success succeeded >>)
+-->
+   (<s> ^operator <o> -)
+}
