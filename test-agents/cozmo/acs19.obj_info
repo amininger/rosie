@@ -1,3 +1,6 @@
 10 -2.032 3.048 0.3048 0.508 0.508 0.508 3 shape box1 color red1 category object
 11 2.032 3.048 0.3048 0.508 0.508 0.508 3 shape box1 color green1 category object
 12 2.032 -3.048 0.3048 0.508 0.508 0.508 3 shape box1 color blue1 category object
+13 0.0 3.048 0.3048 0.508 0.508 0.508 3 shape box1 color orange1 category object
+14 -2.032 0.0 0.3048 0.508 0.508 0.508 3 shape box1 color yellow1 category object
+15 0.0 -3.048 0.3048 0.508 0.508 0.508 3 shape box1 color purple1 category object

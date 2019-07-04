@@ -54,7 +54,6 @@ public class ChatPanel extends JPanel implements IMessagePasser.IMessageListener
     private JButton sendButton;
     // The button used to send a message to the soar agent
     
-    
     // CHAT HISTORY
 
     private List<String> history = new ArrayList<String>();
@@ -70,6 +69,7 @@ public class ChatPanel extends JPanel implements IMessagePasser.IMessageListener
     private SoarAgent soarAgent;
     
     private IMessagePasser messageLogger;
+
 
     public ChatPanel(SoarAgent agent, JFrame parentFrame, IMessagePasser messageLogger) {
         this.soarAgent = agent;
