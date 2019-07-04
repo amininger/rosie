@@ -118,18 +118,33 @@ sp {problem-space*action*pop-task-segment*apply*complete-pop-task-segment*report
    (<status> ^performed.action-event.type <task-handle>)
 }
 
-sp {problem-space*action*pop-task-segment*apply*complete-pop-task-segment*report*find-success
+#sp {problem-space*action*pop-task-segment*apply*complete-pop-task-segment*report*find-success
+#   (state <s> ^name pop-task-segment
+#              ^operator.name complete-pop-task-segment
+#              ^segment-to-pop <segment>
+#              ^top-state.interaction.changes <chgs>)
+#   (<segment> ^status success
+#             ^task-operator.task-handle find1)
+#-->
+#   (<chgs> ^outgoing-message <msg>)
+#   (<msg> ^type find-success
+#          ^complete-message true)
+#}
+
+# Command Status
+sp {problem-space*action*pop-task-segment*apply*complete-pop-task-segment*report*result
    (state <s> ^name pop-task-segment
               ^operator.name complete-pop-task-segment
-              ^segment-to-pop <segment>
+              ^segment-to-pop <seg>
               ^top-state.interaction.changes <chgs>)
-   (<segment> ^status success
-             ^task-operator.task-handle find1)
+   (<seg> ^status <status>
+          ^prev none)
 -->
    (<chgs> ^outgoing-message <msg>)
-   (<msg> ^type find-success
-          ^complete-message true)
+   (<msg> ^type single-word-message
+          ^fields.word <status>)
 }
+
 
 sp {problem-space*action*pop-task-segment*apply*complete-pop-task-segment*failure*mark*subtask-failed
    (state <s> ^name pop-task-segment

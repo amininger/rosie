@@ -29,3 +29,24 @@ sp {op_scan1*reject*complete-task*not*stopped
 -->
    (<s> ^operator <o> -)
 }
+
+sp {op_scan1*propose*report-scan-failure*unsatisfied*until-clause
+   (state <s> ^name op_scan1
+              ^problem-space.execution-type external
+              ^current-task-segment <seg>
+              ^task-operator.until-clause <until>)
+   (<until> -^satisifed true)
+   (<seg> ^turn-command.status << success succeeded >>
+         -^status failure)
+-->
+   (<s> ^operator <o> + > =)
+   (<o> ^name report-scan-failure)
+}
+
+sp {op_scan1*apply*report-scan-failure*mark*failure
+   (state <s> ^name op_scan1
+              ^operator.name report-scan-failure
+              ^current-task-segment <seg>)
+-->
+   (<seg> ^status failure)
+}

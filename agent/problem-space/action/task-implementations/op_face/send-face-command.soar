@@ -52,3 +52,21 @@ sp {op_face1*external*apply*send-face-command*cozmo*coord
           ^speed 45)
    (<seg> ^<cmd-name> <tip>)
 }
+
+sp {op_face1*external*apply*send-face-command*magicbot*orient
+   (state <s> ^name op_face1
+              ^problem-space.execution-type external
+              ^operator <o>
+              ^agent-params.domain magicbot
+              ^yaw-to-target <yaw>
+              ^current-task-segment <seg>
+              ^top-state.io.output-link <out>)
+   (<o> ^name send-face-command
+        ^command-name <cmd-name>)
+-->
+   (<out> ^do-control-law <law>)
+   (<law> ^name orient
+          ^parameters.yaw <yaw>
+          ^termination-condition.name stabilized)
+   (<seg> ^<cmd-name> <law>)
+}

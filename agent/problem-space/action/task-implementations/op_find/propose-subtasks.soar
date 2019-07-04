@@ -56,7 +56,8 @@ sp {op_find1*external*propose*op_go-to-location1*south
    (<loc> ^handle loc-south1
           ^item-type object
           ^predicates <preds>)
-   (<preds> ^category location)
+   (<preds> ^category location
+            ^name southern1)
 }
 
 sp {op_find1*external*propose*op_go-to-location1*north
@@ -79,5 +80,6 @@ sp {op_find1*external*propose*op_go-to-location1*north
    (<loc> ^handle loc-north1
           ^item-type object
           ^predicates <preds>)
-   (<preds> ^category location)
+   (<preds> ^category location
+            ^name northern1)
 }
