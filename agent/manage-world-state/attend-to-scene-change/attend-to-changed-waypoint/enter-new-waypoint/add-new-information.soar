@@ -58,23 +58,23 @@ sp {enter-new-waypoint*apply*add-new-information*add*epmem-obj
         ^epmem-obj <obj>)
 }
 
-# If an object is visible, add an in predicate
-sp {enter-new-waypoint*add*in*predicates*for*visible*objects
-   (state <s> ^name enter-new-waypoint
-              ^operator.name add-new-information
-              ^new-location { <loc> <> none }
-              ^top-state.world.predicates.predicate <in-pred>
-              ^top-state.world.objects.object <obj>)
-   (<in-pred> ^handle in1)
-   (<obj> ^predicates.is-visible1 visible1
-         -^predicates.arm-status grabbed
-         -^predicates.category location)
-   -{(<in-pred> ^instance <cur-i>)
-     (<cur-i> ^1 <obj> ^2 <loc>)}
--->
-   (<in-pred> ^instance <i>)
-   (<i> ^1 <obj> ^2 <loc>)
-}
+## If an object is visible, add an in predicate
+#sp {enter-new-waypoint*add*in*predicates*for*visible*objects
+#   (state <s> ^name enter-new-waypoint
+#              ^operator.name add-new-information
+#              ^new-location { <loc> <> none }
+#              ^top-state.world.predicates.predicate <in-pred>
+#              ^top-state.world.objects.object <obj>)
+#   (<in-pred> ^handle in1)
+#   (<obj> ^predicates.is-visible1 visible1
+#         -^predicates.arm-status grabbed
+#         -^predicates.category location)
+#   -{(<in-pred> ^instance <cur-i>)
+#     (<cur-i> ^1 <obj> ^2 <loc>)}
+#-->
+#   (<in-pred> ^instance <i>)
+#   (<i> ^1 <obj> ^2 <loc>)
+#}
 
 # Mark the new location as confirmed and visible
 sp {enter-new-waypoint*apply*add-new-information*set*location*visible

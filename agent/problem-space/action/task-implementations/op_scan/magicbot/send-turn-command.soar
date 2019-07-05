@@ -20,7 +20,8 @@ sp {op_scan1*apply*send-turn-command
               ^top-state.io.output-link <out>)
 -->
    (<out> ^do-control-law <law>)
-   (<law> ^name turn
+   (<law> ^item-type output-command
+          ^name turn
           ^parameters <params>
           ^termination-condition.name stabilized)
    (<params> ^direction -1

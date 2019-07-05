@@ -23,7 +23,8 @@ sp {op_stop1*external*apply*send-stop-command*magicbot
         ^command-name <cmd-name>)
 -->
    (<out> ^do-control-law <law>)
-   (<law> ^name stop
+   (<law> ^item-type output-command
+          ^name stop
           ^termination-condition.name stabilized)
    (<seg> ^<cmd-name> <law>)
 }

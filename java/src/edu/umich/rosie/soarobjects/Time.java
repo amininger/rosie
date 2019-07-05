@@ -12,11 +12,14 @@ public class Time implements ISoarObject{
 	private Identifier timeId = null;
 	private IntWME seconds;
 	private IntWME steps;
+	private IntWME milliseconds;
+
 	
 	public Time(){
 		startTime = mstime();
 		
 		seconds = new IntWME("seconds", 0L);
+		milliseconds = new IntWME("milliseconds", 0L);
 		steps = new IntWME("steps", 0L);
 	}
 	
@@ -32,6 +35,7 @@ public class Time implements ISoarObject{
 		
 		timeId = parentId.CreateIdWME("time");
 		seconds.addToWM(timeId);
+		milliseconds.addToWM(timeId);
 		steps.addToWM(timeId);
 		
 		added = true;
@@ -51,6 +55,9 @@ public class Time implements ISoarObject{
 		seconds.setValue((mstime() - startTime)/1000);
 		seconds.updateWM();
 		
+		milliseconds.setValue(mstime() - startTime);
+		milliseconds.updateWM();
+		
 		steps.setValue(steps.getValue()+1);
 		steps.updateWM();
 	}
@@ -62,6 +69,7 @@ public class Time implements ISoarObject{
 		}
 
 		seconds.removeFromWM();
+		milliseconds.removeFromWM();
 		steps.removeFromWM();
 		timeId = null;
 

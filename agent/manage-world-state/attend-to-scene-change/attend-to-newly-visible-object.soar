@@ -46,25 +46,25 @@ sp {anystate*apply*attend-to-scene-change*attend-to-newly-visible-object*change*
                ^is-confirmed1 confirmed1)
 }
 
-# Add an in predicate instance for in(obj, cur-loc)
-sp {anystate*apply*attend-to-scene-change*attend-to-newly-visible-object*add*in*predicate
-   (state <s> ^operator <o>
-              ^top-state.world <world>)
-   (<o> ^name attend-to-scene-change
-        ^change <c>)
-   (<c> ^type newly-visible-object
-        ^object-info.wm-obj <obj>)
-   (<world> ^predicates.predicate <in-pred>
-            ^robot.current-location <cur-loc>)
-   (<in-pred> ^handle in1)
-   -{(<in-pred> ^instance <i>)
-     (<i> ^1 <obj> ^2 <cur-loc>)}
-   (<obj> ^predicates <preds>)
-   (<preds> -^arm-status grabbed)
--->
-    (<in-pred> ^instance <i>)
-    (<i> ^1 <obj> ^2 <cur-loc>)
-}
+## Add an in predicate instance for in(obj, cur-loc)
+#sp {anystate*apply*attend-to-scene-change*attend-to-newly-visible-object*add*in*predicate
+#   (state <s> ^operator <o>
+#              ^top-state.world <world>)
+#   (<o> ^name attend-to-scene-change
+#        ^change <c>)
+#   (<c> ^type newly-visible-object
+#        ^object-info.wm-obj <obj>)
+#   (<world> ^predicates.predicate <in-pred>
+#            ^robot.current-location <cur-loc>)
+#   (<in-pred> ^handle in1)
+#   -{(<in-pred> ^instance <i>)
+#     (<i> ^1 <obj> ^2 <cur-loc>)}
+#   (<obj> ^predicates <preds>)
+#   (<preds> -^arm-status grabbed)
+#-->
+#    (<in-pred> ^instance <i>)
+#    (<i> ^1 <obj> ^2 <cur-loc>)
+#}
 
 # Remove any in predicate instances for other locations
 sp {anystate*apply*attend-to-scene-change*attend-to-newly-visible-object*remove*old*in*predicate

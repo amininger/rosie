@@ -24,7 +24,8 @@ sp {op_face1*apply*send-orient-command
         ^yaw <yaw>)
 -->
    (<out> ^do-control-law <law>)
-   (<law> ^name orient
+   (<law> ^item-type output-command
+          ^name orient
           ^parameters.yaw <yaw>
           ^termination-condition.name stabilized)
    (<seg> ^orient-command <law>)

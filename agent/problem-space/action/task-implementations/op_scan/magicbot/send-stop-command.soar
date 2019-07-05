@@ -22,7 +22,8 @@ sp {op_scan1*apply*send-stop-command
               ^top-state.io.output-link <out>)
 -->
    (<out> ^do-control-law <law>)
-   (<law> ^name stop
+   (<law> ^item-type output-command
+          ^name stop
           ^termination-condition.name stabilized)
    (<seg> ^stop-command <law>)
 }

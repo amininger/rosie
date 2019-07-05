@@ -24,7 +24,8 @@ sp {op_drive1*external*apply*send-drive-command*magicbot
         ^command-name <cmd-name>)
 -->
    (<out> ^do-control-law <law>)
-   (<law> ^name drive-forward
+   (<law> ^item-type output-command
+          ^name drive-forward
           ^termination-condition.name stabilized)
    (<seg> ^<cmd-name> <law>)
 }

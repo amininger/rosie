@@ -59,3 +59,5 @@ source attend-to-stale-object_source.soar
 popd
 
 source perform-internal-dynamics.soar
+
+source attend-to-different-reachable.soar

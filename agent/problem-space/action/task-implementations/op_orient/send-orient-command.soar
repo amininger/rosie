@@ -26,7 +26,8 @@ sp {op_orient1*external*apply*send-orient-command*magicbot
         ^yaw <yaw>)
 -->
    (<out> ^do-control-law <law>)
-   (<law> ^name orient
+   (<law> ^item-type output-command
+          ^name orient
           ^parameters.yaw <yaw>
           ^termination-condition.name stabilized)
    (<seg> ^<cmd-name> <law>)

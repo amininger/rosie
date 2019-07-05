@@ -5,7 +5,8 @@ sp {op_put-down1*propose*send-put-down-command
    (<obj> ^predicates.arm-status grabbed)
    (<dest> ^predicates <dest-preds>)
    (<dest-preds> ^is-visible1 visible1
-                 ^is-reachable1 reachable1)
+                 ^is-reachable1 reachable1
+                -^modifier1 current1)
 -->
    (<s> ^operator <o> + =)
    (<o> ^name send-put-down-command
@@ -13,6 +14,20 @@ sp {op_put-down1*propose*send-put-down-command
         ^command-name put-down-command
         ^object <obj>
         ^destination <dest>)
+}
+sp {op_put-down1*propose*send-put-down-command*current-location
+   (state <s> ^name op_put-down1
+              ^held-object <obj>
+              ^destination <dest>)
+   (<obj> ^predicates.arm-status grabbed)
+   (<dest> ^predicates <dest-preds>)
+   (<dest-preds> ^modifier1 current1)
+-->
+   (<s> ^operator <o> + =)
+   (<o> ^name send-put-down-command
+        ^item-type command-operator
+        ^command-name put-down-command
+        ^object <obj>)
 }
 
 sp {op_put-down1*reject*send-put-down-command*already*sent
@@ -99,3 +114,27 @@ sp {op_put-down1*external*apply*send-put-down-command*cozmo*current
    (<pdo> ^item-type output-command)
    (<seg> ^<cmd-name> <pdo>)
 }
+
+# magicbot
+sp {op_put-down1*external*apply*send-put-down-command*magicbot
+   (state <s> ^name op_put-down1
+              ^problem-space.execution-type external
+              ^agent-params.domain magicbot
+              ^operator <o>
+              ^io.output-link <ol>
+              ^current-task-segment <seg>)
+   (<o> ^name send-put-down-command
+        ^command-name <cmd-name>
+        ^object.perception-id <perc-id>)
+-->
+   (<ol> ^do-control-law <cmd>)
+   (<cmd> ^item-type output-command
+          ^name put-down
+          ^termination-condition <term>)
+   (<term> ^name holding
+           ^parameters <params>)
+   (<params> ^object-id <perc-id>
+             ^negated true)
+   (<seg> ^<cmd-name> <cmd>)
+}
+

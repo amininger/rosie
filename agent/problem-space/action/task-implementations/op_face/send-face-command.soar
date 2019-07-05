@@ -65,8 +65,31 @@ sp {op_face1*external*apply*send-face-command*magicbot*orient
         ^command-name <cmd-name>)
 -->
    (<out> ^do-control-law <law>)
-   (<law> ^name orient
+   (<law> ^item-type output-command
+          ^name orient
           ^parameters.yaw <yaw>
+          ^termination-condition.name stabilized)
+   (<seg> ^<cmd-name> <law>)
+}
+
+sp {op_face1*external*apply*send-face-command*magicbot*target-coord
+   (state <s> ^name op_face1
+              ^problem-space.execution-type external
+              ^operator <o>
+              ^agent-params.domain magicbot
+              ^target-coord <target>
+              ^current-task-segment <seg>
+              ^io.input-link.self.pose <pose>
+              ^top-state.io.output-link <out>)
+   (<o> ^name send-face-command
+        ^command-name <cmd-name>)
+   (<pose> ^x <rx> ^y <ry>)
+   (<target> ^x <tx> ^y <ty>)
+-->
+   (<out> ^do-control-law <law>)
+   (<law> ^item-type output-command
+          ^name orient
+          ^parameters.yaw (atan2 (- <ty> <ry>) (- <tx> <rx>))
           ^termination-condition.name stabilized)
    (<seg> ^<cmd-name> <law>)
 }

@@ -23,7 +23,8 @@ sp {primitive-put-down*magicbot*apply*send-put-down-command*send
         ^perception-id <perc-id>)
 -->
    (<out> ^do-control-law <cmd>)
-   (<cmd> ^name put-down
+   (<cmd> ^item-type output-command
+          ^name put-down
           ^termination-condition <term>)
    (<term> ^name holding
            ^parameters <params>)

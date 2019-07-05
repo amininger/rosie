@@ -29,7 +29,8 @@ sp {op_turn1*external*apply*send-turn-command*magicbot
           ^yaw <dy>)
 -->
    (<out> ^do-control-law <law>)
-   (<law> ^name turn
+   (<law> ^item-type output-command
+          ^name turn
           ^parameters.yaw (+ <yaw> <dy>)
           ^termination-condition.name stabilized)
    (<seg> ^<cmd-name> <law>)

@@ -32,3 +32,26 @@ sp {op_go-to-xy1*external*apply*send-go-to-command*cozmo
           ^orientation (* <yaw> 57.3) )
    (<seg> ^<cmd-name> <gtp>)
 }
+
+### magicbot ###
+
+sp {op_go-to-xy1*external*apply*send-go-to-command*magicbot
+   (state <s> ^name op_go-to-xy1
+              ^problem-space.execution-type external
+              ^operator <o>
+              ^agent-params.domain magicbot
+              ^current-task-segment <seg>
+              ^target-coord <coord>
+              ^top-state.io.output-link <out>)
+   (<o> ^name send-go-to-command
+        ^command-name <cmd-name>)
+   (<coord> ^x <x> ^y <y>)
+-->
+    (<out> ^do-control-law <law>)
+    (<law> ^item-type output-command
+           ^name drive-xy
+           ^parameters <params>
+           ^termination-condition.name stabilized)
+    (<params> ^x <x> ^y <y>)
+   (<seg> ^<cmd-name> <law>)
+}

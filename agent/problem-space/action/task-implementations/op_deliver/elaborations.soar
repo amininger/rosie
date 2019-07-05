@@ -16,6 +16,14 @@ sp {op_deliver1*elaborate*target-object
    (<s> ^target-object <obj>)
 }
 
+sp {op_deliver1*elaborate*desired
+   (state <s> ^name op_deliver1
+              ^target-object.predicates.arm-status not-grabbed
+              ^current-task-segment.completed-approach true)
+-->
+   (<s> ^desired.satisfied true)
+}
+
 sp {op_deliver1*apply*pop-task-segment*find*failure*report*failure
    (state <s> ^name op_deliver1
               ^operator <o>
@@ -45,6 +53,17 @@ sp {op_deliver1*apply*report-deliver-failure
               ^current-task-segment <seg>)
 -->
    (<seg> ^status failure)
+}
+
+sp {op_deliver1*apply*pop-task-segment*completed-approach
+   (state <s> ^name op_deliver1
+              ^operator <o>
+              ^current-task-segment <seg>)
+   (<o> ^name pop-task-segment
+        ^segment <app-seg>)
+   (<app-seg> ^task-handle approach1)
+-->
+   (<seg> ^completed-approach true)
 }
 
 

@@ -146,6 +146,68 @@ sp {top-state*perception-monitor*object-monitor*object-info*status*elaborate*in-
    (<status> ^in-view false)
 }
 
+##################################################################
+#
+# distance <float>
+#   The distance to the belief object from the robot
+#
+#################################################################
+
+#sp {top-state*perception-monitor*object-monitor*elaborate*svs-command*compare-position*magicbot
+#   (state <s> ^superstate nil
+#              ^agent-params.domain magicbot
+#              ^perception-monitor.object-monitor.object-info <obj-info>
+#              ^svs.command <cmd>)
+#   (<obj-info> ^belief-obj.id <bel-id>
+#               ^status <status>)
+#-->
+#   (<cmd> ^extract <compare>)
+#   (<compare> ^type distance 
+#              ^a <a>
+#              ^b <b>
+#              ^distance_type centroid)
+#   (<a> ^type node
+#        ^id robot)
+#   (<b> ^type node
+#        ^id <bel-id>)
+#   (<status> ^distance-filter <compare>)
+#}
+
+sp {top-state*perception-monitor*object-monitor*object-info*status*elaborate*distance
+   (state <s> ^superstate nil
+              ^perception-monitor.object-monitor.object-info.status <status>)
+   (<status> ^distance-filter.result.record.value <val>)
+-->
+   (<status> ^distance <val>)
+}
+
+sp {top-state*perception-monitor*object-monitor*object-info*status*elaborate*is-reachable1
+   (state <s> ^superstate nil
+              ^agent-params.domain << internal tabletop magicbot cozmo >>
+              ^perception-monitor.object-monitor.object-info.status <status>)
+-->
+   (<status> ^is-reachable1 reachable1)
+}
+
+#sp {top-state*perception-monitor*object-monitor*object-info*status*elaborate*is-reachable1*reachable1
+#   (state <s> ^superstate nil
+#              ^agent-params.domain magicbot
+#              ^perception-monitor.object-monitor.object-info.status <status>)
+#   (<status> ^distance < 1.5)
+#-->
+#   (<status> ^is-reachable1 reachable1)
+#}
+
+#sp {top-state*perception-monitor*object-monitor*object-info*status*elaborate*is-reachable1*not-reachable1
+#   (state <s> ^superstate nil
+#              ^agent-params.domain magicbot
+#              ^perception-monitor.object-monitor.object-info.status <status>)
+#   (<status> ^distance >= 1.5)
+#-->
+#   (<status> ^is-reachable1 not-reachable1)
+#}
+
+
 #################################################################
 #
 # internal dynamics (used to simulate things)

@@ -21,7 +21,8 @@ sp {primitive-pick-up*magicbot*apply*send-pick-up-command
         ^perception-id <perc-id>)
 -->
    (<ol> ^do-control-law <cmd>)
-   (<cmd> ^name pick-up
+   (<cmd> ^item-type output-command
+          ^name pick-up
           ^parameters.object-id <perc-id>
           ^termination-condition <term>)
    (<term> ^name holding

@@ -69,6 +69,22 @@ sp {top-state*world*predicates*elaborate*instance*using*linked*object*both
    (<i2> ^1 <link-obj1> ^2 <link-obj2>)
 }
 
+sp {top-state*world*predicates*elaborate*in1*current-location
+   (state <s> ^superstate nil
+              ^perception-monitor.object-monitor.object-info <obj-info>
+              ^world <w>)
+   (<obj-info> ^belief-obj
+               ^wm-obj <obj>)
+   (<obj> -^predicates.arm-status grabbed
+          -^categroy location)
+   (<w> ^robot.current-location <loc>
+        ^predicates.predicate <in-pred>)
+   (<in-pred> ^handle in1)
+-->
+   (<in-pred> ^instance <i>)
+   (<i> ^1 <obj> ^2 <loc>)
+}
+
 sp {top-state*world*predicates*elaborate*in*from*contains*info*in1*receptacle
    (state <s> ^superstate nil
               ^perception-monitor.object-monitor.object-info <obj-info>

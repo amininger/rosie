@@ -308,3 +308,85 @@ sp {problem-space*action*pop-task-segment*apply*complete-pop-task-segment*delete
          ^dialog-world <new>)
   (<new> ^objects <objs> ^predicates <preds>)
 }
+
+
+sp {task-utils*pop-task-segment*apply*complete-pop-task-segment*print*task*1*obj
+   (state <s> ^name pop-task-segment
+              ^agent-params.print-new-task-shorthand true
+              ^operator.name complete-pop-task-segment
+              ^segment-to-pop <seg>
+              ^io.input-link.time.milliseconds <time>)
+   (<seg> ^task-operator <task-op>
+          ^status <status>)
+   (<task-op> ^name <op-name>
+           ^<arg1-name> <arg1>
+          -^{ <arg2-name> <> <arg1-name> }.arg-type <t2>)
+   (<arg1> ^arg-type object ^id.handle <obj>)
+-->
+   (write (crlf) |!COMPLETED-TASK! | <op-name> | | <obj> | | <status> | @| <time> (crlf))
+}
+
+sp {task-utils*pop-task-segment*apply*complete-pop-task-segment*print*task*1*pred
+   (state <s> ^name pop-task-segment
+              ^agent-params.print-new-task-shorthand true
+              ^operator.name complete-pop-task-segment
+              ^segment-to-pop <seg>
+              ^io.input-link.time.milliseconds <time>)
+   (<seg> ^task-operator <task-op>
+          ^status <status>)
+   (<task-op> ^name <op-name>
+           ^<arg1-name> <arg1>
+          -^{ <arg2-name> <> <arg1-name> }.arg-type <t2>)
+   (<arg1> ^arg-type partial-predicate ^{2}.handle <obj>)
+-->
+   (write (crlf) |!COMPLETED-TASK! | <op-name> | | <obj> | | <status> | @| <time>(crlf))
+}
+
+sp {task-utils*pop-task-segment*apply*complete-pop-task-segment*print*task*1*obj*1*pred
+   (state <s> ^name pop-task-segment
+              ^agent-params.print-new-task-shorthand true
+              ^operator.name complete-pop-task-segment
+              ^segment-to-pop <seg>
+              ^io.input-link.time.milliseconds <time>)
+   (<seg> ^task-operator <task-op>
+          ^status <status>)
+   (<task-op> ^name <op-name>
+           ^<arg1-name> <arg1>
+           ^<arg2-name> <arg2>)
+   (<arg1> ^arg-type object ^id.handle <obj1>)
+   (<arg2> ^arg-type partial-predicate ^{2}.handle <obj2>)
+-->
+   (write (crlf) |!COMPLETED-TASK! | <op-name> | | <obj1> | | <obj2> | | <status> | @| <time>(crlf))
+}
+
+sp {task-utils*pop-task-segment*apply*complete-pop-task-segment*print*task*0*arg
+   (state <s> ^name pop-task-segment
+              ^agent-params.print-new-task-shorthand true
+              ^operator.name complete-pop-task-segment
+              ^segment-to-pop <seg>
+              ^io.input-link.time.milliseconds <time>)
+   (<seg> ^task-operator <task-op>
+          ^status <status>)
+   (<task-op> ^name <op-name>
+             -^arg1 -^arg2)
+-->
+   (write (crlf) |!EXECUTE-TASK! | <op-name> | | <status> | @| <time> (crlf))
+}
+        
+sp {task-utils*pop-task-segment*apply*complete-pop-task-segment*print*task*1*arg*coord
+   (state <s> ^name pop-task-segment
+              ^agent-params.print-new-task-shorthand true
+              ^operator.name complete-pop-task-segment
+              ^segment-to-pop <seg>
+              ^io.input-link.time.milliseconds <time>)
+   (<seg> ^task-operator <task-op>
+          ^status <status>)
+   (<task-op> ^name <op-name>
+              ^arg1 <arg1>)
+   (<arg1> ^arg-type coordinate
+           ^coord <c>)
+   (<c> ^x <x> ^y <y>)
+-->
+   (write (crlf) |!EXECUTE-TASK! | <op-name> | (| <x> |, | <y> |) | <status> | @| <time> (crlf))
+}
+        

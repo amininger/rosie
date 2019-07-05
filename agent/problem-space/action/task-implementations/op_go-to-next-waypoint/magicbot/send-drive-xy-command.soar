@@ -39,7 +39,8 @@ sp {op_go-to-next-waypoint1*apply*send-drive-xy-command
    (<pos> ^x <x> ^y <y>)
 -->
    (<out> ^do-control-law <law>)
-   (<law> ^name drive-xy
+   (<law> ^item-type output-command
+          ^name drive-xy
           ^parameters <params>
           ^termination-condition.name stabilized)
    (<params> ^x <x> ^y <y>)

@@ -25,7 +25,8 @@ sp {op_scan1*external*apply*send-turn-command*magicbot
         ^command-name <cmd-name>)
 -->
    (<out> ^do-control-law <law>)
-   (<law> ^name turn
+   (<law> ^item-type output-command
+          ^name turn
           ^parameters <params>
           ^termination-condition.name stabilized)
    (<params> ^direction -1

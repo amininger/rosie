@@ -27,7 +27,8 @@ sp {op_follow-wall1*external*apply*send-follow-wall-command*magicbot
         ^direction.side <side>)
 -->
    (<out> ^do-control-law <law>)
-   (<law> ^name follow-wall
+   (<law> ^item-type output-command
+          ^name follow-wall
           ^parameters.side <side>
           ^termination-condition.name stabilized)
    (<seg> ^<cmd-name> <law>)

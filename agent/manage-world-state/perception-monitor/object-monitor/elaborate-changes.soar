@@ -403,6 +403,39 @@ sp {top-state*perception-monitor*object-monitor*elaborate*change*missing-object*
 
 ############################################################################################
 #
+# Change: different-reachable-predicate
+#    When the reachable predicate changes for an object
+#
+#############################################################################################
+
+sp {top-state*perception-monitor*elaborate*change-info*different-reachable-predicate
+   (state <s> ^superstate nil
+              ^perception-monitor.change-info <info>)
+-->
+   (<info> ^change <new-obj-pred>)
+   (<new-obj-pred> ^type different-reachable-predicate
+                   ^category object)
+}
+
+sp {top-state*perception-monitor*object-monitor*elaborate*changes*different-reachable-predicate
+   (state <s> ^superstate nil
+              ^perception-monitor <perc-mon>)
+   (<perc-mon> ^changes <changes>
+               ^object-monitor.object-info <obj-info>)
+   (<obj-info> ^properties.property-info <prop-info>
+               ^wm-obj.predicates <wm-preds>
+               ^status.is-reachable1 <reachable>)
+   (<wm-preds> -^is-reachable1 <reachable>)
+-->
+   (<changes> ^change <change>)
+   (<change> ^type different-reachable-predicate
+             ^object-info <obj-info>
+             ^is-reachable1 <reachable>)
+}
+
+
+############################################################################################
+#
 # Change: new-object-predicate
 #    When a unary predicate for a given category is on the perception object
 #      and not on the belief object
