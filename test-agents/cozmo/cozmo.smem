@@ -6,29 +6,29 @@ smem --add {
 
 	# Southern room
 	(<south> ^handle loc-south1 ^object-instance true ^item-type object ^waypoint wp02
-        ^category location ^name southern2 ^spatial-shape room2 ^child-location <northwest2> <northeast2> <southeast2> <southwest2>)
+        ^category location ^name southern1 ^spatial-shape room1 ^child-location <northwest2> <northeast2> <southeast2> <southwest2>)
 
 	# Hallway
 	(<hall> ^handle loc-hall1 ^object-instance true ^item-type object ^waypoint wp03
 		^category location ^spatial-shape hall1)
 
 	# Northern Room Corners
-	(<northwest1> ^handle loc-northwest1 ^object-instance true ^item-type object ^parent-location <north> ^x -2.032 ^y 3.048 
+	(<northwest1> ^handle loc-northwest1 ^object-instance true ^item-type object ^parent-location <north> ^x -1.00 ^y 0.75
 		^category location ^name northwest1 ^spatial-shape corner1)
-	(<northeast1> ^handle loc-northeast1 ^object-instance true ^item-type object ^parent-location <north> ^x 2.032 ^y 3.048 
+	(<northeast1> ^handle loc-northeast1 ^object-instance true ^item-type object ^parent-location <north> ^x 1.00 ^y 0.75 
 		^category location ^name northeast1 ^spatial-shape corner1)
-	(<southeast1> ^handle loc-southeast1 ^object-instance true ^item-type object ^parent-location <north> ^x 2.032 ^y -3.048 
+	(<southeast1> ^handle loc-southeast1 ^object-instance true ^item-type object ^parent-location <north> ^x 1.00 ^y -0.75 
 		^category location ^name southeast1 ^spatial-shape corner1)
-	(<southwest1> ^handle loc-southwest1 ^object-instance true ^item-type object ^parent-location <north> ^x -2.032 ^y -3.048 
+	(<southwest1> ^handle loc-southwest1 ^object-instance true ^item-type object ^parent-location <north> ^x -1.00 ^y -0.75 
 		^category location ^name southwest1 ^spatial-shape corner1)
 
-	(<northwest2> ^handle loc-northwest2 ^object-instance true ^item-type object ^parent-location <south> ^x -2.032 ^y -6.096 
+	(<northwest2> ^handle loc-northwest2 ^object-instance true ^item-type object ^parent-location <south> ^x -1.00 ^y -3.55
 		^category location ^name northwest2 ^spatial-shape corner1)
-	(<northeast2> ^handle loc-northeast2 ^object-instance true ^item-type object ^parent-location <south> ^x 2.032 ^y -6.096 
+	(<northeast2> ^handle loc-northeast2 ^object-instance true ^item-type object ^parent-location <south> ^x 1.00 ^y -3.55 
 		^category location ^name northeast2 ^spatial-shape corner1)
-	(<southeast2> ^handle loc-southeast2 ^object-instance true ^item-type object ^parent-location <south> ^x 2.032 ^y -12.192 
+	(<southeast2> ^handle loc-southeast2 ^object-instance true ^item-type object ^parent-location <south> ^x 1.00 ^y -5.08 
 		^category location ^name southeast2 ^spatial-shape corner1)
-	(<southwest2> ^handle loc-southwest2 ^object-instance true ^item-type object ^parent-location <south> ^x -2.032 ^y -12.192 
+	(<southwest2> ^handle loc-southwest2 ^object-instance true ^item-type object ^parent-location <south> ^x -1.00 ^y -5.08 
 		^category location ^name southwest2 ^spatial-shape corner1)
 
 }

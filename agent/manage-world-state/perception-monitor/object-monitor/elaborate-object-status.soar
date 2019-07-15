@@ -122,8 +122,19 @@ sp {top-state*perception-monitor*object-monitor*object-info*status*elaborate*in-
    (<status> ^in-view true)
 }
 
+sp {top-state*perception-monitor*object-monitor*object-info*status*elaborate*in-view*true*magicbot*no*partial-observability
+   (state <s> ^superstate nil
+              ^agent-params.domain << magicbot cozmo >>
+              ^agent-params.model-partial-observability false
+              ^perception-monitor.object-monitor.object-info <obj-info>)
+   (<obj-info> ^status <status>)
+-->
+   (<status> ^in-view true)
+}
+
 sp {top-state*perception-monitor*object-monitor*object-info*status*elaborate*in-view*true
    (state <s> ^superstate nil
+              ^agent-params.model-partial-observability true
               ^perception-monitor.object-monitor.object-info <obj-info>
               ^perception-monitor.robot-view-filter.result.record <r>)
    (<obj-info> ^belief-obj.id <bel-id>
@@ -136,6 +147,7 @@ sp {top-state*perception-monitor*object-monitor*object-info*status*elaborate*in-
 
 sp {top-state*perception-monitor*object-monitor*object-info*status*elaborate*in-view*false
    (state <s> ^superstate nil
+              ^agent-params.model-partial-observability true
               ^perception-monitor.object-monitor.object-info <obj-info>
               ^perception-monitor.robot-view-filter.result.record <r>)
    (<obj-info> ^belief-obj.id <bel-id>

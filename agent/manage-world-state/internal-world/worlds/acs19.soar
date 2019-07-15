@@ -22,15 +22,15 @@ sp {top-state*domain*internal*elaborate*internal-world*acs19
    (<obj3-preds> ^shape box1 ^color blue1 ^category object)
 
    (<objs> ^object <obj4>)
-   (<obj4> ^handle box1_4 ^waypoint wp01 ^predicates <obj4-preds>)
+   (<obj4> ^handle box1_4 ^waypoint wp02 ^predicates <obj4-preds>)
    (<obj4-preds> ^shape box1 ^color orange1 ^category object)
 
    (<objs> ^object <obj5>)
-   (<obj5> ^handle box1_5 ^waypoint wp01 ^predicates <obj5-preds>)
+   (<obj5> ^handle box1_5 ^waypoint wp02 ^predicates <obj5-preds>)
    (<obj5-preds> ^shape box1 ^color yellow1 ^category object)
 
    (<objs> ^object <obj6>)
-   (<obj6> ^handle box1_6 ^waypoint wp01 ^predicates <obj6-preds>)
+   (<obj6> ^handle box1_6 ^waypoint wp02 ^predicates <obj6-preds>)
    (<obj6-preds> ^shape box1 ^color purple1 ^category object)
 
 }

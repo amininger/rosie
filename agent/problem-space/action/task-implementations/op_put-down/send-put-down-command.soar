@@ -108,7 +108,7 @@ sp {op_put-down1*external*apply*send-put-down-command*cozmo*current
    (<o> ^name send-put-down-command
         ^command-name <cmd-name>
         ^object <obj>
-        ^destination.predicates.modifier1 current1)
+       -^destination)
 -->
    (<ol> ^place-object-down <pdo>)
    (<pdo> ^item-type output-command)

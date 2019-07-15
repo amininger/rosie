@@ -4,7 +4,8 @@ sp {op_deliver1*external*propose*op_find1
               ^problem-space.execution-type external
               ^target-object <obj>
              -^current-task-segment.completed-approach true)
-   (<obj> ^predicates.is-visible1 not-visible1)
+   (<obj> ^predicates.is-visible1 not-visible1
+          -^predicates.arm-status grabbed)
 -->
    (<s> ^operator <o> + =)
    (<o> ^name op_find1

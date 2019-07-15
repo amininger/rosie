@@ -31,6 +31,8 @@ sp {top-state*elaborate*agent-params*perception
    (state <s> ^top-state <s>
               ^agent-params <params>)
 -->
+   (<params> ^model-partial-observability true)
+   (<params> ^retrieve-previous-locations true)
    (<params> ^stability-check-duration 0)#2)#1	# How many seconds to wait before checking whether an object is stable (and thus not noise)
    (<params> ^pos-diff-threshold .02)		# How far an object should have moved before the difference is considered significant
    (<params> ^vol-low-diff-threshold .8) #.8	# How much an object must have shrunk before the difference is considered significant

@@ -1,6 +1,7 @@
 # Try to find an episode for the last time we were in the location
 sp {enter-new-waypoint*propose*retrieve-previous-episode
    (state <s> ^name enter-new-waypoint
+              ^agent-params.retrieve-previous-locations true
               ^new-location <loc>
              -^retrieved-episode)
    (<loc> ^handle <h>)

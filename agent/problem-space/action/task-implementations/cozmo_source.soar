@@ -50,9 +50,9 @@ pushd op_roll
 source op_roll_source.soar
 popd
 
-pushd op_change-color
-source op_change-color_source.soar
-popd
+#pushd op_change-color
+#source op_change-color_source.soar
+#popd
 
 pushd op_go-to-location
 source op_go-to-location_source.soar
@@ -68,3 +68,6 @@ popd
 
 source action-models.soar
 
+pushd op_deliver
+source op_deliver_source.soar
+popd
