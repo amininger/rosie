@@ -27,9 +27,9 @@ sp {op_go-to-xy1*external*apply*send-go-to-command*cozmo
 -->
    (<out> ^go-to-pose <gtp>)
    (<gtp> ^item-type output-command
-          ^x (* <x> 100.0)
-          ^y (* <y> 100.0)
-          ^orientation (* <yaw> 57.3) )
+          ^x <x>
+          ^y <y>
+          ^orientation <yaw>)
    (<seg> ^<cmd-name> <gtp>)
 }
 

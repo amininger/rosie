@@ -26,8 +26,8 @@ sp {op_face1*propose*send-face-command
 #-->
 #   (<out> ^face-forward <df>)
 #   (<df> ^item-type output-command
-#         ^distance 300
-#         ^speed 100)
+#         ^distance 0.3
+#         ^speed 0.1)
 #   (<seg> ^<cmd-name> <df>)
 #}
 
@@ -48,8 +48,8 @@ sp {op_face1*external*apply*send-face-command*cozmo*coord
    (<out> ^turn-in-place <tip>)
    (<tip> ^item-type output-command
           ^absolute true
-          ^angle (* (atan2 (- <cy> <y>) (- <cx> <x>) ) 57.3)
-          ^speed 45)
+          ^angle (atan2 (- <cy> <y>) (- <cx> <x>) )
+          ^speed 0.75)
    (<seg> ^<cmd-name> <tip>)
 }
 

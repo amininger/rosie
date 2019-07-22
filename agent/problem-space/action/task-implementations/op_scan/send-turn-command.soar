@@ -67,8 +67,8 @@ sp {op_scan1*external*apply*send-turn-command*cozmo
 -->
    (<out> ^turn-in-place <tip>)
    (<tip> ^item-type output-command
-          ^angle 360
-          ^speed 20)
+          ^angle 6.28
+          ^speed 0.3)
    (<seg> ^<cmd-name> <tip>)
 }
 

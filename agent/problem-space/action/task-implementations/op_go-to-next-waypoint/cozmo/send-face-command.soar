@@ -29,7 +29,7 @@ sp {op_go-to-next-waypoint1*apply*send-face-command
    (<out> ^turn-in-place <tip>)
    (<tip> ^item-type output-command
           ^absolute true
-          ^angle (* (atan2 (- <py> <ry>) (- <px> <rx>) ) 57.3)
+          ^angle (atan2 (- <py> <ry>) (- <px> <rx>) )
           ^speed 45)
    (<seg> ^<cmd-name> <tip>)
 }

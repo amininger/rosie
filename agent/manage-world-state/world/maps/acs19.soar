@@ -17,19 +17,19 @@ sp {topstate*elaborate*map
   (<wp01> ^handle wp01 ^handle-int 1 ^x 0.0 ^y 0.0 ^map <building>)
    (<wp01> ^edge <e0103>)
     (<e0103> ^start <wp01> ^end <wp03> ^wall-side 1
-         ^doorway true ^door_sx 2.448 ^door_sy 0.0 ^door_ex 3.648 ^door_ey 0.0)
+         ^doorway true ^door_sx -0.2952 ^door_sy 0.0 ^door_ex 0.9047999999999999 ^door_ey 0.0)
 
-  (<wp02> ^handle wp02 ^handle-int 2 ^x 0.0 ^y -4.318 ^map <building>)
+  (<wp02> ^handle wp02 ^handle-int 2 ^x 0.0 ^y -0.43179999999999996 ^map <building>)
    (<wp02> ^edge <e0203>)
     (<e0203> ^start <wp02> ^end <wp03> ^wall-side 1
-         ^doorway true ^door_sx 2.448 ^door_sy -4.318 ^door_ex 3.648 ^door_ey -4.318)
+         ^doorway true ^door_sx -0.2952 ^door_sy -0.43179999999999996 ^door_ex 0.9047999999999999 ^door_ey -0.43179999999999996)
 
-  (<wp03> ^handle wp03 ^handle-int 3 ^x 4.064 ^y -2.159 ^map <building>)
+  (<wp03> ^handle wp03 ^handle-int 3 ^x 0.4064 ^y -0.21589999999999998 ^map <building>)
    (<wp03> ^edge <e0301>)
     (<e0301> ^start <wp03> ^end <wp01> ^wall-side -1
-         ^doorway true ^door_sx 3.648 ^door_sy 0.0 ^door_ex 2.448 ^door_ey 0.0)
+         ^doorway true ^door_sx 0.9047999999999999 ^door_sy 0.0 ^door_ex -0.2952 ^door_ey 0.0)
    (<wp03> ^edge <e0302>)
     (<e0302> ^start <wp03> ^end <wp02> ^wall-side -1
-         ^doorway true ^door_sx 3.648 ^door_sy -4.318 ^door_ex 2.448 ^door_ey -4.318)
+         ^doorway true ^door_sx 0.9047999999999999 ^door_sy -0.43179999999999996 ^door_ex -0.2952 ^door_ey -0.43179999999999996)
 
 }

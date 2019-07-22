@@ -63,7 +63,7 @@ sp {op_drive1*external*apply*send-drive-command*cozmo
 -->
    (<out> ^drive-forward <df>)
    (<df> ^item-type output-command
-         ^distance 300
-         ^speed 100)
+         ^distance 0.3
+         ^speed 0.1)
    (<seg> ^<cmd-name> <df>)
 }
