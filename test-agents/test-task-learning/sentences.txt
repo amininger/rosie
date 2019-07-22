@@ -1,7 +1,28 @@
-Store the fork. 
-If the fork is a utensil then the goal is that the fork is in the drawer and the drawer is closed.
-Store the soda
-If the soda is a liquid then the goal is that the soda is in the fridge and the fridge is closed.
-Store the knife
-Store the water
+Approach the fork.
+
+Store the fork.
+If the fork is a utensil then the goal is that the fork is in the drawer and the drawer is closed
+
+Store the soda.
+If the soda is a liquid then the goal is that the soda is in the fridge and the fridge is closed
+
+Heat the blue mug. 
+Move the blue mug into the microwave.
+Close the microwave. 
+Turn on the microwave for five seconds
+Wait until the microwave is off
+Open the microwave. 
+Move the blue mug onto the counter. 
+Close the microwave. 
+You are done. 
+
+Pick up the pitcher. 
+Use the pitcher with the white mug.
+Store the pitcher. 
+Heat the white mug. 
+Move the white mug onto the table. 
+
+Open the fridge. 
+Use the pitcher with the blue mug. 
+Move the blue mug onto the table. 
 
