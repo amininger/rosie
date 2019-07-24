@@ -14,7 +14,6 @@ Wait until the microwave is off
 Open the microwave. 
 Move the blue mug onto the counter. 
 Close the microwave. 
-You are done. 
 
 Pick up the pitcher. 
 Use the pitcher with the white mug.
@@ -23,6 +22,7 @@ Heat the white mug.
 Move the white mug onto the table. 
 
 Open the fridge. 
+Pick up the pitcher.
 Use the pitcher with the blue mug. 
 Move the blue mug onto the table. 
 
